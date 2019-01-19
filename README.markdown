@@ -23,13 +23,6 @@ The first player to collect all the cherries from his/her tree and call "Hi Ho! 
 new(number_of_players = 4, number_of_games = 1000)
 def run() # returns number of games won by each player
 
-
-### Game
-new(number_of_players)
-players = [] (players)
-
-def play()  
-
 ## TODO
 - [ ] Update probabilities
 - [ ] Update logic for dog
