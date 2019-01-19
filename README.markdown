@@ -18,12 +18,7 @@ Each player starts the game with an empty basket and 10 cherries on his/her tree
 
 The first player to collect all the cherries from his/her tree and call "Hi Ho! Cherry-O" wins the game.
 
-## Object Design Sketch
-### Simulation
-new(number_of_players = 4, number_of_games = 1000)
-def run() # returns number of games won by each player
-
 ## TODO
 - [ ] Update probabilities
-- [ ] Update logic for dog
-- [ ] Record raw data so I can graph the converging probabilities
+- [ ] Record length of games to show percentiles of how long games take 
+- [ ] Record intermediate data on log scale so I can graph converging probabilities
