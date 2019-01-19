@@ -30,13 +30,6 @@ players = [] (players)
 
 def play()  
 
-### Player
-int cherrys_on_tree
-int cherrys_in_basket
-
-def play_turn
-def winner?
-
 ## TODO
 - [ ] Update probabilities
 - [ ] Update logic for dog
