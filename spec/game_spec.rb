@@ -24,4 +24,15 @@ describe Game do
       expect(Game.new.play).to be 3
     end
   end
+
+  describe 'stats' do
+    it 'returns winning number of moves' do
+      allow(Spinner).to receive(:spin).and_return(:four)
+
+      game = Game.new
+      game.play
+
+      expect(game.winning_number_of_moves).to be 3
+    end
+  end
 end
