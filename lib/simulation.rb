@@ -1,7 +1,7 @@
 require_relative 'game.rb'
 
 class Simulation
-  attr_reader :stats
+  attr_reader :stats, :intermediate_results
 
   def initialize(number_of_players = 4, number_of_games = 1000)
     @number_of_players = number_of_players
@@ -12,14 +12,26 @@ class Simulation
   end
 
   def run
+    @intermediate_results = {:scale => []}
     results = {}
-    @number_of_players.times{|player| results[player+1] = 0}
+    @number_of_players.times do |player| 
+      results[player+1] = 0
+      @intermediate_results[player+1] = []
+    end
 
-    @number_of_games.times do
+    @number_of_games.times do |i|
       game = Game.new(@number_of_players)
       winner = game.play
 
       update_stats(game)
+
+      if (i+1 >= 10) && ((i+1) % (10 ** Math.log10(i+1).floor) == 0)
+        @intermediate_results[:scale] << i+1
+        @number_of_players.times do |player|
+          @intermediate_results[player+1] << results[player+1].to_f / (i+1)
+        end
+        
+      end
 
       results[winner] += 1
     end
